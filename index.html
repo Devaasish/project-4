@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <title>Share Button | SCS</title>
+    </head>
+    <body>
+        <div id="shareBox"><button onclick="closeDialogueBox();" id="closeB">Close</button>
+            <header>Share</header>
+            <label id="l1">Normal Link 👇</label><br><br>
+            <textarea id="textinput1">https://facebook.com</textarea><br><br>
+            <label id="l2">Short Link 👇</label><br>
+            <textarea id="textinput2">https://google.com</textarea><br><br><br>
+            <span id="b1" onclick="copyLink();">Copy the Normal Link</span>
+            <span id="b2" onclick="linkCopy();">Copy the Short Link</span>
+        </div>
+        <button id="shareB" onclick="dialogueBox();" style="font-family: 'Poppins', sans-serif;">Share the Website to your friends and family</button>
+    </body>
+    <script>   
+        function copyLink() {
+            var text = document.getElementById("textinput1");
+            text.select();
+            document.execCommand("Copy");
+            alert("Link copied to Clipboard");
+        }
+
+        function linkCopy() {
+            var text2 = document.getElementById("textinput2");
+            text2.select();
+            document.execCommand("Copy");
+            alert("Link copied to Clipboard");
+        }
+
+        function dialogueBox() {
+            var shareBo = document.getElementById("shareBox");
+            var x = document.getElementById("shareB");
+            shareBo.style.display = "block";
+            x.style.display = "none";
+        }
+
+        function closeDialogueBox() {
+            var box = document.getElementById("shareBox");
+            var y = document.getElementById("shareB");
+            box.style.display = "none";
+            y.style.display = "inline-block";
+        }
+    </script>
+</html>
